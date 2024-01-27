@@ -1,0 +1,41 @@
+.btn-google {
+    background-color: #DB4437;
+    color: white;
+}
+
+.btn-microsoft {
+    background-color: #F3F3F3;
+    color: #F25022;
+}
+
+.btn-facebook {
+    background-color: #4267B2;
+    color: white;
+}
+
+.auth-button {
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.auth-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.auth-button span {
+    font-weight: bold;
+}
+
+.auth-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

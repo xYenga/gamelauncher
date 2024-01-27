@@ -1,0 +1,45 @@
+import React, {useState} from "react";
+import './Register.css';
+import {Link, useNavigate} from "react-router-dom";
+import Loading from "../../LessImportantShit/Loader";
+
+function Register() {
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+    const handleNavigateToLogin = () => {
+        setIsLoading(true);
+        setTimeout(() => {
+            console.log('Navigating to /register');
+            navigate('/');
+        }, 1000);
+    };
+
+    return (
+        <div className="register-container">
+            {isLoading ? (
+                <div className="loading-container">
+                    <Loading isLoading={isLoading} />
+                </div>
+            ) : (
+            <div className="register">
+                <h1 id='register-title'>Register</h1>
+                <form action="">
+                    <input type="text" placeholder="Username" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Repeat Password" />
+                    <Link to={''} id={'register-btn'}>
+                    <button className={'register-now'} type="submit">Register</button>
+                    </Link>
+                    <p className="login-link">
+                        Already have an account? <span> </span>
+                        <span onClick={handleNavigateToLogin} id={'l-link'}>Back to login</span>
+                    </p>
+                </form>
+            </div>
+                )};
+        </div>
+    );
+}
+
+export default Register;
