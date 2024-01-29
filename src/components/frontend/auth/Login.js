@@ -11,29 +11,35 @@ function Login() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        // await appWindow.
         setIsLoading(true);
         console.log('Login form submitted');
 
-
         setTimeout(async () => {
+            await appWindow.hide();
+            console.log('Window hidden');
+
             try {
-
-                setTimeout(() => appWindow.hide(), 100);
-                console.log('Window hidden');
-
                 console.log('Attempting to resize window');
                 const size = new LogicalSize(1024, 768);
+
+                await appWindow.setMinSize(size);
+
                 await appWindow.setSize(size);
+                await appWindow.setResizable(true);
+                await appWindow.setMaximizable(true);
                 await appWindow.center();
 
-                console.log('Window shown');
 
-                console.log('Login successful, navigating to /home');
-
-                setTimeout( () => {
-                    setTimeout(() => appWindow.show(), 10);
+                setTimeout(() => {
+                    console.log('Window adjustments done, showing window');
+                    console.log('Login successful, navigating to Home');
                     navigate('/home');
-                }, 5000);
+
+                    setTimeout(() => {
+                        appWindow.show();
+                    }, 500);
+                }, 2500);
             } catch (error) {
                 console.error('Error during login process:', error);
             } finally {
@@ -42,12 +48,22 @@ function Login() {
         }, 5000);
     };
 
+
     const handleNavigateToRegister = () => {
-        setIsLoading(true); // Start loading
+        setIsLoading(true);
         setTimeout(() => {
             console.log('Navigating to /register');
             navigate('/register');
         }, 2000);
+    };
+
+
+    const handleNavigateToReset = () => {
+        setIsLoading(true);
+        setTimeout(() => {
+            console.log('Navigating to /register');
+            navigate('/reset');
+        }, 1500);
     };
 
     return (
@@ -72,6 +88,10 @@ function Login() {
                         Don't have an account? <span> </span>
                         <span onClick={handleNavigateToRegister} id={'r-link'}>Register here</span>
                     </p>
+                    <p className="register-link">
+                        Forgot password? <span> </span>
+                        <span onClick={handleNavigateToReset} id={'r-link'}>Reset here</span>
+                    </p>
                     <div className="auth-options">
                         <AccOptions/>
                     </div>
@@ -79,6 +99,6 @@ function Login() {
             )}
         </div>
     );
-    }
+}
 
-    export default Login;
+export default Login;

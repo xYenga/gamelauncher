@@ -4,7 +4,7 @@ body {
 }
 
 .login-container {
-    background-color: #00659f;
+    background: linear-gradient(to right, #202062, #06625d);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,6 +63,14 @@ button{
 
 .register-link{
     text-align: center;
+}
+
+p{
+    color: white;
+}
+
+label{
+    color: white;
 }
 
 #r-link{

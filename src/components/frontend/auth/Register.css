@@ -4,7 +4,7 @@ body {
 }
 
 .register-container {
-    background-color: #00659f;
+    background: linear-gradient(to left, #202062, #06625d);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,6 +82,15 @@ button {
     text-align: center;
 }
 
+
+p{
+    color: white;
+}
+
+label{
+    color: white;
+}
+
 #l-link{
     text-align: center;
     margin-top: 10px;
@@ -92,4 +101,8 @@ button {
         text-decoration: underline;
         cursor: pointer;
     }
+}
+
+.policy-checkbox{
+    padding: 10px;
 }

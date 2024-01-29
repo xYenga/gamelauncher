@@ -1,0 +1,33 @@
+
+p{
+    color: white;
+    text-align: left;
+}
+
+.radios{
+    display: flex;
+    flex-direction: column;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+label{
+    color: white;
+}
+
+.email{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.email-inp{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}

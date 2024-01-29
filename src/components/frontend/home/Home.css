@@ -1,3 +1,18 @@
+
+body{
+    background: linear-gradient(to right, #202062, #06625d);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
 hr{
-    
+    background-color: black;
+    border: none;
+    padding: 2px;
+}
+
+.home{
+    height: 100%;
 }

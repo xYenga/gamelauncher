@@ -1,0 +1,19 @@
+.navbar {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.btn{
+    background-color: transparent;
+    justify-content: center;
+
+    font-weight: bold;
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.18);
+    }
+}

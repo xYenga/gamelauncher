@@ -3,6 +3,7 @@ import './Home.css'
 import {Link, useNavigate} from "react-router-dom";
 import {appWindow, LogicalSize} from "@tauri-apps/api/window";
 import Loader from "../../LessImportantShit/Loader";
+import {NavBar} from "./NavBar";
 
 
 function Home() {
@@ -14,23 +15,27 @@ function Home() {
         console.log('logout submitted');
 
         setTimeout(async () => {
-            try {
-                setTimeout(() => appWindow.hide(), 1000);
-                console.log('Window hidden');
+            await appWindow.hide();
+            console.log('Window hidden');
 
+            try {
                 console.log('Attempting to resize window');
                 const size = new LogicalSize(400, 600);
+
                 await appWindow.setSize(size);
+                await appWindow.setResizable(false)
                 await appWindow.center();
 
-                console.log('Window shown');
-
-                console.log('Logout successful, navigating to /login');
 
                 setTimeout(() => {
+                    console.log('Window adjustments done, showing window');
+                    console.log('Login successful, navigating to Login');
                     navigate('/');
-                    setTimeout(() => appWindow.show(), 2000);
-                }, 2000);
+
+                    setTimeout(() => {
+                        appWindow.show();
+                    }, 500);
+                }, 2500);
             } catch (error) {
                 console.error('Error during login process:', error);
             } finally {
@@ -58,7 +63,7 @@ function Home() {
     return (
         <div className="home-container">
                 <div className="home">
-                    <h1 id='home-title'>Homepage</h1>
+                    <NavBar/>
                     <hr/>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
