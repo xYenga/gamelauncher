@@ -69,7 +69,7 @@ button {
     text-align: center;
 
     &:hover{
-        background-color: #45a049;
+        background-color: rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -82,6 +82,18 @@ button {
     text-align: center;
 }
 
+.policy-link{
+    color: #0091c7;
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.label{
+    text-align: center;
+}
 
 p{
     color: white;
@@ -95,7 +107,7 @@ label{
     text-align: center;
     margin-top: 10px;
     text-decoration: none;
-    color: #1d0096;
+    color: #0091c7;
 
     &:hover {
         text-decoration: underline;

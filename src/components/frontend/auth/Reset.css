@@ -31,3 +31,19 @@ label{
     border-radius: 4px;
     width: 100%;
 }
+
+#reset-btn {
+    background-color: #4CAF50;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    text-align: center;
+
+    .reset-now{
+        background-color: transparent;
+    }
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}

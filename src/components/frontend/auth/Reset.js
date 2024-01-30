@@ -8,6 +8,7 @@ function Reset() {
     const [resetOption, setResetOption] = useState(null);
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
+
     const handleNavigateToLogin = () => {
         setIsLoading(true);
         setTimeout(() => {
@@ -15,7 +16,6 @@ function Reset() {
             navigate('/');
         }, 1000);
     };
-
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -70,8 +70,8 @@ function Reset() {
                             />
                         </div>
 
-                        <Link to={''} id={'register-btn'}>
-                            <button className={'register-now'} type="submit">Register</button>
+                        <Link to={''} id={'reset-btn'}>
+                            <button className={'reset-now'} type="submit">Reset</button>
                         </Link>
                         <p className="login-link">
                             Already have an account? <span> </span>

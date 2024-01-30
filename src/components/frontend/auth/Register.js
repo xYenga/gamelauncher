@@ -40,13 +40,13 @@ function Register() {
                     <input type="password" placeholder="Repeat Password"/>
 
                     <div className="policy-checkbox">
-                        <label>
+                        <label id={'label'}>
                             <input
                                 type="checkbox"
                                 checked={policyAccepted}
                                 onChange={handlePolicyChange}
                             />
-                            I accept the <a href="/policy">terms and conditions</a>.
+                            I accept the <a className={'policy-link'} href="/policy">terms and conditions</a>.
                         </label>
                     </div>
 

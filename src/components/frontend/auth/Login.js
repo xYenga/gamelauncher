@@ -82,15 +82,14 @@ function Login() {
                             <input type="checkbox" id="stayLoggedin"/>
                             <label htmlFor="stayLoggedin">Stay logged in</label>
                         </div>
-                        <button className='log-btn' type="submit">Log In</button>
+                        <button className='login-btn' type="submit">Log In</button>
                     </form>
                     <p className="register-link">
                         Don't have an account? <span> </span>
                         <span onClick={handleNavigateToRegister} id={'r-link'}>Register here</span>
                     </p>
                     <p className="register-link">
-                        Forgot password? <span> </span>
-                        <span onClick={handleNavigateToReset} id={'r-link'}>Reset here</span>
+                        <span onClick={handleNavigateToReset} id={'r-link'}>Forgot password?</span>
                     </p>
                     <div className="auth-options">
                         <AccOptions/>
